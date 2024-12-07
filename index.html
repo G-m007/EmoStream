@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Feed</title>
+</head>
+<body>
+    <h1>Emoji Feed</h1>
+    
+    <h2>Most Frequent Emoji:</h2>
+    <p id="emoji">
+        {% if top_emoji %}
+            {{ top_emoji }}
+        {% else %}
+            No emojis received yet.
+        {% endif %}
+    </p>
+
+    <h2>All Received Emojis and Counts:</h2>
+    <ul>
+        {% if emoji_counter %}
+            {% for emoji, count in emoji_counter.items() %}
+                <li>{{ emoji }}: {{ count }}</li>
+            {% endfor %}
+        {% else %}
+            <p>No emojis to display.</p>
+        {% endif %}
+    </ul>
+</body>
+</html>
+
